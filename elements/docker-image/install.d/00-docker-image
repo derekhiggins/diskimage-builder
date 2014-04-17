@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cat - <<-EOF > /bin/run-container
+#!/bin/bash
+
+/usr/sbin/sshd-keygen
+/usr/sbin/sshd
+
+
+EOF
+chmod +x /bin/run-container
+
+

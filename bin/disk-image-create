@@ -177,6 +177,7 @@ eval_run_d block-device "IMAGE_BLOCK_DEVICE="
 sudo mkfs $MKFS_OPTS -t $FS_TYPE -L cloudimg-rootfs ${IMAGE_BLOCK_DEVICE}
 mkdir $TMP_BUILD_DIR/mnt
 sudo mount ${IMAGE_BLOCK_DEVICE} $TMP_BUILD_DIR/mnt
+sudo tar -C ${TMP_BUILD_DIR}/built -cf $IMAGE_NAME.dockerball .
 sudo mv -t $TMP_BUILD_DIR/mnt ${TMP_BUILD_DIR}/built/*
 mount_proc_dev_sys
 run_d_in_target finalise

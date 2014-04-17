@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cat - <<-EOF >> /bin/run-container
+
+while true; do
+    sleep 3000
+done
+EOF
